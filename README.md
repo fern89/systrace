@@ -9,3 +9,6 @@ Compiled with mingw gcc using `x86_64-w64-mingw32-gcc systrace.c`
 
 ## Tooling integration
 Include the `trace.h` header, call `init()`, then add the `TRACE` macro in front of any ntdll call you would like to unhook.
+
+## Possible improvements
+Currently, the single-step execution is EXTREMELY slow. It may be possible to use the Page Guard hooking method so that the program can run win32 APIs uninterrupted, only resuming single-stepping once exiting the function.
